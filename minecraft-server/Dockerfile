@@ -1,9 +1,9 @@
-FROM alpine
+FROM alpine:latest
 
 
-LABEL maintainer "itzg"
+LABEL maintainer "doconnell@cursived.com"
 
-RUN echo "http://dl-3.alpinelinux.org/alpine/v3.5/community/" >> /etc/apk/repositories &&\
+RUN echo "http://dl-3.alpinelinux.org/alpine/v3.6/community/" >> /etc/apk/repositories &&\
         apk update && \
         apk add \
           openjdk8-jre-base \
@@ -16,6 +16,7 @@ RUN echo "http://dl-3.alpinelinux.org/alpine/v3.5/community/" >> /etc/apk/reposi
           git \
           jq \
           mysql-client \
+          sqlite\
           python python-dev && \
         rm -rf /var/cache/apk/*
 
